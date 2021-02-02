@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with - React with Serveless
+
+Main goal of this project is to explore knowledge in React library and serveless architectures. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
