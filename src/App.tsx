@@ -9,18 +9,20 @@ function App() {
     <div className="App">
       <Header />
 
-      <div className="container-fluid h-100">
-        <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div className="container-fluid vh-100">
+
+        <div className="row">
+          <div className="col-sm-12 col-md-4 col-lg-4">
+              <form>
+
+              </form>
+          </div>
+
+          <div className="col-sm-12 col-md-4 col-lg-4">
+              Your list
+          </div>
+        </div>
+     
       </div>
      
       <Footer/>
