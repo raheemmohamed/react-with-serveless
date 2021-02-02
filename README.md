@@ -11,6 +11,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Serveless Deployment Dashboard ![alt text](https://serving.photos.photobox.com/47737007964d122dcdc638b97d2ffa1c9706a08d13fa2455989bfea4e00069f57ce9959e.jpg)
 
+## Deployment Command
+
+1. Use below command to deploy 
+
+> serverless deploy
+
+2. Use below command to generate components
+
+> npx generate-react-cli component ComponentName
+
+
 ## Dependencies used for development
 
 1. Added Serveless Framework [Doc](https://www.serverless.com/)
