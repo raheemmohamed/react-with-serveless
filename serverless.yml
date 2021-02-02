@@ -1,0 +1,10 @@
+org: raheem
+app: react-with-serveless
+name: react-starter
+component: website
+
+inputs:
+  src:
+    src: ./src
+    hook: npm run build
+    dist: ./dist
