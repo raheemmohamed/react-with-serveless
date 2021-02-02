@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Click here to visit to Demo](https://d2m4rzmmy782lt.cloudfront.net/)
 
 
-* Serveless Deployment Dashboard [alt text](https://serving.photos.photobox.com/47737007964d122dcdc638b97d2ffa1c9706a08d13fa2455989bfea4e00069f57ce9959e.jpg)
+* Serveless Deployment Dashboard ![alt text](https://serving.photos.photobox.com/47737007964d122dcdc638b97d2ffa1c9706a08d13fa2455989bfea4e00069f57ce9959e.jpg)
 
 ## Dependencies used for development
 
