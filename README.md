@@ -7,13 +7,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Click here to visit to Demo](https://d2m4rzmmy782lt.cloudfront.net/)
 
 
-*Serveless Dashboard [alt text](https://www.photobox.co.uk/my/photo/full?photo_id=503728897455)
+* Serveless Deployment Dashboard [alt text](https://serving.photos.photobox.com/47737007964d122dcdc638b97d2ffa1c9706a08d13fa2455989bfea4e00069f57ce9959e.jpg)
 
 ## Dependencies used for development
-Added Serveless Framework [Doc](https://www.serverless.com/)
-Added Bootstrap 4.6.0 [Doc](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-Added Typescript to react [Doc](https://create-react-app.dev/docs/adding-typescript)
-Added React CLI [Doc](https://www.npmjs.com/package/generate-react-cli)
+
+1. Added Serveless Framework [Doc](https://www.serverless.com/)
+2. Added Bootstrap 4.6.0 [Doc](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+3. Added Typescript to react [Doc](https://create-react-app.dev/docs/adding-typescript)
+4. Added React CLI [Doc](https://www.npmjs.com/package/generate-react-cli)
 
 ## Available Scripts
 
