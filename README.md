@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## DEMO link - Deployed with Serveless + AWS
+
+[Click here to visit to Demo](https://d2m4rzmmy782lt.cloudfront.net/)
+
+
+*Serveless Dashboard [alt text](https://www.photobox.co.uk/my/photo/full?photo_id=503728897455)
+
+## Dependencies used for development
+Added Serveless Framework [Doc](https://www.serverless.com/)
+Added Bootstrap 4.6.0 [Doc](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+Added Typescript to react [Doc](https://create-react-app.dev/docs/adding-typescript)
+Added React CLI [Doc](https://www.npmjs.com/package/generate-react-cli)
+
 ## Available Scripts
 
 In the project directory, you can run:
