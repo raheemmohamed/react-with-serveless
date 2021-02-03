@@ -1,10 +1,62 @@
 import React, { Component } from "react";
 import "./Form.scss";
 import axios from 'axios';
+import { useForm } from "react-hook-form";
+
+
+function ContactForm() {
+  const { register,setValue, handleSubmit,errors } = useForm();
+  const onSubmit = (data:any) => {
+    alert(JSON.stringify(data));
+  };
+
+  return (
+     
+        <form className="text-left p-4 border" data-testid="Form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-group">
+          <label>Your Name</label>
+          <input type="text" className={`form-control ${errors.name ? "is-invalid": ""}`} placeholder="Your name" name="name" ref={register({ required: true })} />
+          {errors.name && <p className="text-danger">Your Name is required</p>}
+        </div>
+
+        <div className="form-group">
+          <label>Email address</label>
+          <input
+            type="email"
+            className={`form-control`}
+            aria-describedby="emailHelp"
+            placeholder="Enter email" name="email" ref={register({ required: false })}
+            value="mohamedraheem0444@gmail.com"
+            readOnly
+          />
+          <small id="emailHelp" className="form-text text-muted">
+            This email is cannot be change because it's verified email connected with AWS SES (Simple Email Service)
+          </small>
+        </div>
+        <div className="form-group">
+          <label>Message</label>
+          <textarea
+            className={`form-control ${errors.name ? "is-invalid": ""}`}
+            placeholder="Your message here"
+            name="msg"
+            ref={register({ required: true })}
+          />
+
+         
+          {errors.name && <p className="text-danger">Message is required</p>}
+        </div>
+
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+  );
+}
 
 class Form extends Component {
   form:any;
   state:any;
+  
 
   constructor(public props:any){
     super(props);
@@ -37,46 +89,12 @@ class Form extends Component {
 
 
   render() {
-    return (
-      <div>
-        <h4>{this.props.title}</h4>
-        <form className="text-left p-4 border" data-testid="Form" onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <label>Your Name</label>
-          <input type="text" className="form-control" placeholder="Your name" name="name" value={this.state.name}  onChange={this.handleChange} />
-        </div>
-
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            aria-describedby="emailHelp"
-            placeholder="Enter email" name="email" value={this.state.email} onChange={this.handleChange}
-            readOnly
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            This email is cannot be change because it's verified email connected with AWS SES (Simple Email Service)
-          </small>
-        </div>
-        <div className="form-group">
-          <label>Message</label>
-          <textarea
-            className="form-control"
-            placeholder="Your message here"
-            name="msg"
-            value={this.state.msg} onChange={this.handleChange}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
-      </div>
-      
-      
-    );
+   return(
+     <div>
+       <h4>{this.props.title}</h4>
+       <ContactForm/>
+     </div>
+   )
   }
 }
 
