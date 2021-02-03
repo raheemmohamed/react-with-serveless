@@ -1,70 +1,105 @@
 import React, { Component } from "react";
 import "./Form.scss";
-import axios from 'axios';
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
+var $ = require("jquery");
+
+async function sendEmail(formData: any) {
+  let endpointURL = "https://2q06ia4fh8.execute-api.us-east-1.amazonaws.com";
+
+  $.ajax({
+    type: "POST",
+    url: endpointURL + "/sendEmail",
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify(formData),
+    success: function (data: any) {
+      alert(data);
+    },
+    error: function () {
+      // show an error message
+      alert("UnSuccessfull");
+    },
+  });
+
+  console.log("Send email form", formData);
+}
 
 function ContactForm() {
-  const { register,setValue, handleSubmit,errors } = useForm();
-  const onSubmit = (data:any) => {
+  const { register, setValue, handleSubmit, errors } = useForm();
+  const onSubmit = (data: any) => {
     alert(JSON.stringify(data));
+
+    sendEmail(data);
   };
 
   return (
-     
-        <form className="text-left p-4 border" data-testid="Form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
-          <label>Your Name</label>
-          <input type="text" className={`form-control ${errors.name ? "is-invalid": ""}`} placeholder="Your name" name="name" ref={register({ required: true })} />
-          {errors.name && <p className="text-danger">Your Name is required</p>}
-        </div>
+    <form
+      className="text-left p-4 border"
+      data-testid="Form"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className="form-group">
+        <label>Your Name</label>
+        <input
+          type="text"
+          className={`form-control ${errors.name ? "is-invalid" : ""}`}
+          placeholder="Your name"
+          name="name"
+          ref={register({ required: true })}
+        />
+        {errors.name && <p className="text-danger">Your Name is required</p>}
+      </div>
 
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className={`form-control`}
-            aria-describedby="emailHelp"
-            placeholder="Enter email" name="email" ref={register({ required: false })}
-            value="mohamedraheem0444@gmail.com"
-            readOnly
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            This email is cannot be change because it's verified email connected with AWS SES (Simple Email Service)
-          </small>
-        </div>
-        <div className="form-group">
-          <label>Message</label>
-          <textarea
-            className={`form-control ${errors.name ? "is-invalid": ""}`}
-            placeholder="Your message here"
-            name="msg"
-            ref={register({ required: true })}
-          />
+      <div className="form-group">
+        <label>Email address</label>
+        <input
+          type="email"
+          className={`form-control`}
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          name="email"
+          ref={register({ required: false })}
+          value="mohamedraheem0444@gmail.com"
+          readOnly
+        />
+        <small id="emailHelp" className="form-text text-muted">
+          This email is cannot be change because it's verified email connected
+          with AWS SES (Simple Email Service)
+        </small>
+      </div>
+      <div className="form-group">
+        <label>Message</label>
+        <textarea
+          className={`form-control ${errors.name ? "is-invalid" : ""}`}
+          placeholder="Your message here"
+          name="msg"
+          ref={register({ required: true })}
+        />
 
-         
-          {errors.msg && <p className="text-danger">Message is required</p>}
-        </div>
+        {errors.msg && <p className="text-danger">Message is required</p>}
+      </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
+    </form>
   );
 }
 
 class Form extends Component {
-  constructor(public props:any){
+  constructor(public props: any) {
     super(props);
   }
 
   render() {
-   return(
-     <div>
-       <h4>{this.props.title}</h4>
-       <ContactForm/>
-     </div>
-   )
+    return (
+      <div>
+        <h4>{this.props.title}</h4>
+        <ContactForm />
+      </div>
+    );
   }
 }
 
