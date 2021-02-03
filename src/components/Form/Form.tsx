@@ -43,7 +43,7 @@ function ContactForm() {
           />
 
          
-          {errors.name && <p className="text-danger">Message is required</p>}
+          {errors.msg && <p className="text-danger">Message is required</p>}
         </div>
 
         <button type="submit" className="btn btn-primary">
@@ -54,39 +54,9 @@ function ContactForm() {
 }
 
 class Form extends Component {
-  form:any;
-  state:any;
-  
-
   constructor(public props:any){
     super(props);
-
-    this.state = {name: '', email: 'mohamedraheem0444@gmail.com', msg: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange(event:any) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-
-    console.log("handle change form event", event.target)
-   // this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event:any) {
-    alert('A name was submitted: ' + this.state);
-    console.log("Submitted form event", event, this.state)
-    event.preventDefault();
-  }
-
-
 
   render() {
    return(
