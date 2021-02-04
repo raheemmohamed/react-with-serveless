@@ -3,21 +3,38 @@ import "./Form.scss";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
+var message:any = null;
+
+export function getSubmitMessage(){
+  return message;
+}
+
 async function sendEmail(formData: any) {
   let endpointURL = "https://2q06ia4fh8.execute-api.us-east-1.amazonaws.com";
 
   axios
     .post(endpointURL + "/sendEmail", formData)
     .then(function (response) {
-      console.log(response);
+      console.log(" response status "+ response.status);
+      message = {
+        status: response.status
+      }
+      
     })
     .catch(function (error) {
       console.log(error);
+
+      message = {
+        status: 500
+      }
+      
+
     });
 }
 
 function ContactForm() {
   const { register, setValue, handleSubmit, errors } = useForm();
+
   const onSubmit = (data: any) => {
     alert(JSON.stringify(data));
 
@@ -78,19 +95,47 @@ function ContactForm() {
   );
 }
 
+
 class Form extends Component {
+
+  state = { status: '' }
+
   constructor(public props: any) {
     super(props);
+
+   
   }
 
+
+  onTrigger = (event:any) => {
+ 
+
+     if(message != null){
+       if(message.status == 200){
+        this.props.parentCallback(message.status);
+       }else{
+        this.props.parentCallback(message.status);
+       }
+     }
+    
+  }
+
+
   render() {
+
+    setInterval(()=> {
+      this.onTrigger(null)
+    }, 1000)
+
     return (
       <div>
         <h4>{this.props.title}</h4>
-        <ContactForm />
+        <ContactForm/>
       </div>
     );
   }
 }
+
+
 
 export default Form;
