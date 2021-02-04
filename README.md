@@ -8,7 +8,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Click here to visit to Demo](https://d2m4rzmmy782lt.cloudfront.net/)
 
+## This is how application interface look and feel
 
+![alt text](https://serving.photos.photobox.com/4963961048380439a7659c099433cfdbbe36c2cb30910554e87094dbeba4436bc5c5a06f.jpg)
+
+> Once filled the form and submitted, then it will recived a email like this
+![alt text](https://i.ibb.co/TcpCJbh/gmail-screenshot.png)
+
+## serverless Dashboard
 * Serveless Deployment Dashboard ![alt text](https://serving.photos.photobox.com/47737007964d122dcdc638b97d2ffa1c9706a08d13fa2455989bfea4e00069f57ce9959e.jpg)
 
 ## Deployment Command
@@ -22,12 +29,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 > npx generate-react-cli component ComponentName
 
 
-## Dependencies used for development
+## Used Dependencies to this project 
 
-1. Added Serveless Framework [Doc](https://www.serverless.com/)
-2. Added Bootstrap 4.6.0 [Doc](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-3. Added Typescript to react [Doc](https://create-react-app.dev/docs/adding-typescript)
-4. Added React CLI [Doc](https://www.npmjs.com/package/generate-react-cli)
+1. Used Serveless Framework [Doc](https://www.serverless.com/)
+2. Used Bootstrap 4.6.0 [Doc](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+3. Used Typescript to react [Doc](https://create-react-app.dev/docs/adding-typescript)
+4. Used React CLI [Doc](https://www.npmjs.com/package/generate-react-cli)
+5. Used react-hook-form [Doc](https://react-hook-form.com/)
+6. Used Axios [Doc](https://www.npmjs.com/package/axios)
 
 ## Available Scripts
 
