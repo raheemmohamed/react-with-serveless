@@ -3,27 +3,17 @@ import "./Form.scss";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
-var $ = require("jquery");
-
 async function sendEmail(formData: any) {
   let endpointURL = "https://2q06ia4fh8.execute-api.us-east-1.amazonaws.com";
 
-  $.ajax({
-    type: "POST",
-    url: endpointURL + "/sendEmail",
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    data: JSON.stringify(formData),
-    success: function (data: any) {
-      alert(data);
-    },
-    error: function () {
-      // show an error message
-      alert("UnSuccessfull");
-    },
-  });
-
-  console.log("Send email form", formData);
+  axios
+    .post(endpointURL + "/sendEmail", formData)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 function ContactForm() {
