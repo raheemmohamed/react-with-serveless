@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Form, { getSubmitMessage } from "./components/Form/Form";
+import Form from "./components/Form/Form";
 import { Component } from "react";
 
 
@@ -41,8 +41,8 @@ class App extends Component{
               <h4>Send Email status</h4>
              
 
-              {data ==200 && <div className="alert alert-success" role="alert"> Email is Sent Successfully</div>}
-              {data ==500 && <div className="alert alert-danger" role="alert"> Email sent fail</div>}
+              {data ===200 && <div className="alert alert-success" role="alert"> Email is Sent Successfully</div>}
+              {data === 500 && <div className="alert alert-danger" role="alert"> Email sent fail</div>}
               
 
           </div>
